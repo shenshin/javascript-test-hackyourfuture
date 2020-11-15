@@ -13,10 +13,9 @@ function getLord(placeHolder, url) {
 }
 
 function getMember(placeHolder, houseID) {
-  /* console.log(houseID); */
   fetch(baseURL + houseID).then((response) => response.json()).then((houseInfo) => {
     const membersArray = houseInfo.swornMembers;
-    const randomMemberIndex = Math.floor(Math.random(membersArray.length));
+    const randomMemberIndex = Math.floor(Math.random() * membersArray.length);
     const randomMemberURL = membersArray[randomMemberIndex];
     fetch(randomMemberURL).then((data) => data.json()).then((member) => {
       placeHolder.innerHTML = member.name;
@@ -61,6 +60,4 @@ ids.forEach((houseID) => {
   getHouseInfo(houseID);
 });
 
-killButton.addEventListener('click', () => {
-  killLord();
-});
+killButton.addEventListener('click', killLord);
