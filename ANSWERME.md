@@ -2,7 +2,7 @@
 
 
 I created a function getMember() whitch grabs a random member from the house crew and if house
-doesnt have a leader, it puts there one of the swords.
+doesnt have a leader, it puts there one of the knights.
 
 
 2. You could have used XMLHttpRequest, the library axios or the fetch API to get the data from the server. And you could have used callbacks, async/await and/or promises. What did you use and why?
